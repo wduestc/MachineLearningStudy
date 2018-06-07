@@ -141,6 +141,29 @@ def createTree(dataSet, labels):
         myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value), subLabels)
     return myTree
 
+def classify(inputTree, featLabels, testVec):
+    """
+    Desc:
+      对新的数据进行分类
+    Parameters:
+      inputTree -- 已经训练好的决策树模型
+      featLables -- Feature标签对应的名称
+      testVec -- 测试输入的数据
+    returns:
+    """
+    firstStr = list(inputTree.keys())[0]
+    secondDict = inputTree[firstStr]
+    featIndex = featLabels.index(firstStr)
+    # 测试数据
+    key = testVec[featIndex]
+    valueOfFeat = secondDict[key]
+    print ('+++', firstStr, 'xxx', secondDict, '---', key, '>>>', valueOfFeat)
+    if isinstance(valueOfFeat, dict):
+        classLabel = classify(valueOfFeat, featLabels, testVec)
+    else:
+        classLabel = valueOfFeat
+    return classLabel
+
 
     
     
