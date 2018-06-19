@@ -6,3 +6,4 @@
 # @File     : NativeBayes.py
 # @Software : PyCharm
 
+print ("hello world")

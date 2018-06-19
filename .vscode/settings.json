@@ -1,0 +1,9 @@
+{
+  "python.pythonPath": "C:\\Anaconda3\\python.exe",
+  "python.linting.pylintEnabled":false,
+  "python.linting.flake8Enabled": false,
+  "python.linting.flake8Args": [
+    "--max-line-length=248"
+  ],
+  "python.formatting.provider": "autopep8"
+}
